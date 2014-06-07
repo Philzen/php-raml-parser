@@ -9,7 +9,7 @@ class Parser
      *
      * @var array
      */
-    private $cachedFiles = [];
+    private $cachedFiles = array();
 
     // ---
 
@@ -29,7 +29,7 @@ class Parser
         $array = $this->includeAndParseFiles($array, $rootDir);
 
         if(isset($array['traits'])) {
-            $keyedTraits = [];
+            $keyedTraits = array();
             foreach($array['traits'] as $trait) {
                 foreach($trait as $k=>$t) {
                     $keyedTraits[$k] = $t;
@@ -154,7 +154,7 @@ class Parser
             return $raml;
         }
 
-        $newArray = [];
+        $newArray = array();
 
         foreach ($raml as $key => $value) {
             if($key === 'is') {
